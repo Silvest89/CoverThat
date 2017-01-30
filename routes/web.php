@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/login', 'LoginController@login');
-Route::get('/userdashboard', 'LoginController@login')->middleware('auth');
+Route::get('/userdashboard', 'LoginController@login');
