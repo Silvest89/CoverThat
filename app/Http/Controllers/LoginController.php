@@ -12,14 +12,15 @@ class LoginController extends Controller
 {
 
 
-    public function login(LoginRequest $request)
+    public function login(/*Request $request*/)
     {
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => 'test', 'password' => 'test'])) {
 
             dd('test');
             //return redirect()->to('user_dashboard');
         }
+        dd('test2');
 
     }
 }
