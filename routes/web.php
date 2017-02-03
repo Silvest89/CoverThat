@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
-
 Route::get('/home', 'HomeController@index');
-Route::get('/login', 'LoginController@login');
-Route::get('/userdashboard', 'LoginController@login');
+
+Route::group(['middleware' => ['login.auth']], function () {
+    Route::get('/login', 'Auth\LoginController@login');
+});
+
+Route::get('/login/userdashboard', 'LoginController@userDashboard')->name('user_dashboard')->middleware('user.auth');
+Route::get('/login/admindashboard', 'LoginController@adminDashboard')->name('admin_dashboard')->middleware('admin.auth');
+

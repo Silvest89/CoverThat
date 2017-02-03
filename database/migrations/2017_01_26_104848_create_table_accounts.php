@@ -18,7 +18,9 @@ class CreateTableAccounts extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('remember_token')->nullable();
+            $table->boolean('admin')->nullabe();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
