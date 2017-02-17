@@ -6,7 +6,6 @@
 Homestead.json
 Homestead.yaml
 .env
-client_secrets.json
 /public/js/*
 /public/css/*
 /public/fonts/*
