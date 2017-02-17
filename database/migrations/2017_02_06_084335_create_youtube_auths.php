@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableVideos extends Migration
+class CreateYoutubeAuths extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateTableVideos extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('youtube_auths', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('account_id');
             $table->string('youtube_id');
-            $table->string('name');
+            $table->string('access_token')->nullable();
+            $table->string('refresh_token')->nullable();
+            $table->string('expires');
             $table->timestamps();
 
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+
         });
     }
 
@@ -31,7 +34,7 @@ class CreateTableVideos extends Migration
      */
     public function down()
     {
-        Schema::drop('videos', function (Blueprint $table) {
+        Schema::drop('youtube_auths', function (Blueprint $table) {
             $table->dropForeign('account_id');
         });
     }

@@ -18,16 +18,7 @@ class LoginAuthenthication
     {
 
         if (Auth::check()) {
-
-            $user = Auth::user();
-            if($user->admin) {
-
-                return redirect()->intended(route('admin_dashboard'));
-            }
-            else {
-
-                return redirect()->intended(route('user_dashboard'));
-            }
+            return redirect()->intended(route('dashboard_home'));
         }
 
         return $next($request);

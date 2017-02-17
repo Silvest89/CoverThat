@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => ['login.auth']], function () {
-    Route::get('/login', 'Auth\LoginController@login');
+Route::group(['middleware' => ['login.auth'], 'prefix' => 'dashboard', 'namespace' => 'Auth'], function () {
+    Route::get('/login', 'LoginController@index');
+    Route::post('/login', 'LoginController@login')->name('dashboard.login');
 });
 
-Route::get('/login/userdashboard', 'LoginController@userDashboard')->name('user_dashboard')->middleware('user.auth');
-Route::get('/login/admindashboard', 'LoginController@adminDashboard')->name('admin_dashboard')->middleware('admin.auth');
+Route::post('/register', 'Auth\RegistrationController@register');
+
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'user.auth'], function() {
+
+    Route::get('/logout', 'DashboardController@logout');
+    Route::get('/home', 'DashboardController@index')->name('dashboard_home');
+
+});
 

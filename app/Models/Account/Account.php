@@ -1,6 +1,7 @@
 <?php
 
-namespace App;
+namespace App\Models\Account;
+
 
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -17,7 +18,7 @@ class Account extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password'
+        'email'
     ];
 
     /**
@@ -31,5 +32,9 @@ class Account extends Authenticatable
 
     public function isAdmin() {
         return $this->admin;
+    }
+
+    public function getInformation() {
+        return $this->hasOne('App\AccountInformation');
     }
 }

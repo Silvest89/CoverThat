@@ -184,6 +184,7 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -235,6 +236,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
 
     ],

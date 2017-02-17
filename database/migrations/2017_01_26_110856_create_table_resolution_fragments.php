@@ -13,12 +13,14 @@ class CreateTableResolutionFragments extends Migration
      */
     public function up()
     {
-        Schema::create('resolution_fragments', function (Blueprint $table) {
+        Schema::create('video_fragments', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('resolution_id');
+            $table->unsignedInteger('video_id');
+            $table->unsignedInteger('start_time');
+            $table->unsignedInteger('end_time');
             $table->timestamps();
 
-            $table->foreign('resolution_id')->references('id')->on('video_resolutions')->onDelete('cascade');
+            $table->foreign('video_id')->references('id')->on('videos')->onDelete('cascade');
         });
     }
 
@@ -29,8 +31,8 @@ class CreateTableResolutionFragments extends Migration
      */
     public function down()
     {
-        Schema::drop('resolution_fragments', function (Blueprint $table) {
-            $table->dropForeign('resolution_id');
+        Schema::drop('video_fragments', function (Blueprint $table) {
+            $table->dropForeign('video_id');
         });
     }
 }

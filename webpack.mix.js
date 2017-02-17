@@ -11,5 +11,16 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+/*mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');*/
+mix.js('resources/assets/js/main.js', 'public/js')
+    .sass('resources/assets/sass/main.scss', 'public/css');
+
+mix.sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.combine([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/foundation-sites/dist/js/foundation.min.js'
+], 'public/js/app.js');
+
+//mix.copy('node_modules/motion-ui/dist/motion-ui.min.css', 'public/css')

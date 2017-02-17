@@ -17,11 +17,8 @@ class UserAuthenthication
     public function handle($request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect('/login');
+            return redirect('/dashboard/login');
         }
-
-        if(Auth::user()->isAdmin())
-            return redirect(route('admin_dashboard'));
 
         return $next($request);
     }

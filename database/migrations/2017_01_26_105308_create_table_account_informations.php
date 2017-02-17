@@ -16,11 +16,13 @@ class CreateTableAccountInformations extends Migration
         Schema::create('account_informations', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('account_id');
-            $table->string('address');
-            $table->string('house_number');
-            $table->string('zip_code');
-            $table->string('city');
-            $table->string('country');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address')->nullable();
+            $table->string('house_number')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
 
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
