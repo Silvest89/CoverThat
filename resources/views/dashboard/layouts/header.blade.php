@@ -13,7 +13,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!--<link href="/css/motion-ui.min.css" rel="stylesheet">-->
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
