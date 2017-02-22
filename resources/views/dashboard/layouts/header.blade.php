@@ -14,7 +14,7 @@
     <!--<link href="/css/motion-ui.min.css" rel="stylesheet">-->
 
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -29,10 +29,10 @@
 
 @yield('content')
 
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ secure_asset('js/app.js') }}"></script>
 <script>
     $(document).foundation();
 </script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ secure_asset('js/main.js') }}"></script>
 </body>
 </html>
