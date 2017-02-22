@@ -13,8 +13,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!--<link href="/css/motion-ui.min.css" rel="stylesheet">-->
 
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -29,10 +29,10 @@
 
 @yield('content')
 
-<script src="/js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <script>
     $(document).foundation();
 </script>
-<script src="/js/main.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
