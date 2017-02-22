@@ -19,10 +19,10 @@ class CreateYoutubeAuths extends Migration
             $table->string('youtube_id');
             $table->string('access_token')->nullable();
             $table->string('refresh_token')->nullable();
-            $table->string('expires');
+            $table->dateTime('expires');
             $table->timestamps();
 
-            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('account_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

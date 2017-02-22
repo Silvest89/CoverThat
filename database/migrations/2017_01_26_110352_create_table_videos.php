@@ -20,7 +20,7 @@ class CreateTableVideos extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('account_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

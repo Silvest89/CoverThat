@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\RegistrationRequest;
-use App\Models\Account\Account;
-use App\Models\Account\AccountInformation;
+use App\Models\Account\User;
+use App\Models\Account\UserInformation;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -23,13 +23,13 @@ class RegistrationController extends Controller
 
         try {
 
-            $account = new Account;
+            $account = new User;
 
             $account->email = $request->email;
             $account->password = Hash::make($request->password);
             $account->save();
 
-            $information = new AccountInformation;
+            $information = new UserInformation;
 
             $information->account_id = $account->id;
             $information->first_name = $request->first_name;

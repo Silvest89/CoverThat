@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.12 on 2017-02-15.
+ * Generated for Laravel 5.4.12 on 2017-02-18.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1547,7 +1547,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\Models\Account\Account|null 
+         * @return \App\Models\Account\User|null
          * @static 
          */
         public static function user()
@@ -1582,7 +1582,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\Models\Account\Account|false 
+         * @return \App\Models\Account\User|false
          * @static 
          */
         public static function onceUsingId($id)
@@ -1646,7 +1646,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\Models\Account\Account|false 
+         * @return \App\Models\Account\User|false
          * @static 
          */
         public static function loginUsingId($id, $remember = false)
@@ -1693,7 +1693,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\Models\Account\Account 
+         * @return \App\Models\Account\User
          * @static 
          */
         public static function getLastAttempted()
@@ -1818,7 +1818,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\Models\Account\Account|null 
+         * @return \App\Models\Account\User|null
          * @static 
          */
         public static function getUser()
@@ -1864,7 +1864,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \App\Models\Account\Account 
+         * @return \App\Models\Account\User
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */
@@ -14262,6 +14262,256 @@ namespace Collective\Html {
     }         
 }
     
+namespace App\Facades {
+
+    class JHYoutube {
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function test()
+        {
+            return \App\Facades\JHYoutube::test();
+        }
+        
+        /**
+         * Convert the facade into a Mockery spy.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function spy()
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \App\Facades\JHYoutube::spy();
+        }
+        
+        /**
+         * Initiate a mock expectation on the facade.
+         *
+         * @return \Mockery\Expectation 
+         * @static 
+         */
+        public static function shouldReceive()
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \App\Facades\JHYoutube::shouldReceive();
+        }
+        
+        /**
+         * Hotswap the underlying instance behind the facade.
+         *
+         * @param mixed $instance
+         * @return void 
+         * @static 
+         */
+        public static function swap($instance)
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \App\Facades\JHYoutube::swap($instance);
+        }
+        
+        /**
+         * Get the root object behind the facade.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function getFacadeRoot()
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \App\Facades\JHYoutube::getFacadeRoot();
+        }
+        
+        /**
+         * Clear a resolved facade instance.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstance($name)
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \App\Facades\JHYoutube::clearResolvedInstance($name);
+        }
+        
+        /**
+         * Clear all of the resolved instances.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstances()
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \App\Facades\JHYoutube::clearResolvedInstances();
+        }
+        
+        /**
+         * Get the application instance behind the facade.
+         *
+         * @return \Illuminate\Contracts\Foundation\Application 
+         * @static 
+         */
+        public static function getFacadeApplication()
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \App\Facades\JHYoutube::getFacadeApplication();
+        }
+        
+        /**
+         * Set the application instance.
+         *
+         * @param \Illuminate\Contracts\Foundation\Application $app
+         * @return void 
+         * @static 
+         */
+        public static function setFacadeApplication($app)
+        {
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \App\Facades\JHYoutube::setFacadeApplication($app);
+        }
+        
+    }         
+}
+    
+namespace Vinkla\Hashids\Facades {
+
+    class Hashids {
+        
+        /**
+         * Get the factory instance.
+         *
+         * @return \Vinkla\Hashids\HashidsFactory 
+         * @static 
+         */
+        public static function getFactory()
+        {
+            return \Vinkla\Hashids\HashidsManager::getFactory();
+        }
+        
+        /**
+         * Get a connection instance.
+         *
+         * @param string $name
+         * @return object 
+         * @static 
+         */
+        public static function connection($name = null)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::connection($name);
+        }
+        
+        /**
+         * Reconnect to the given connection.
+         *
+         * @param string $name
+         * @return object 
+         * @static 
+         */
+        public static function reconnect($name = null)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::reconnect($name);
+        }
+        
+        /**
+         * Disconnect from the given connection.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function disconnect($name = null)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            \Vinkla\Hashids\HashidsManager::disconnect($name);
+        }
+        
+        /**
+         * Get the configuration for a connection.
+         *
+         * @param string $name
+         * @throws \InvalidArgumentException
+         * @return array 
+         * @static 
+         */
+        public static function getConnectionConfig($name)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::getConnectionConfig($name);
+        }
+        
+        /**
+         * Get the default connection name.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultConnection()
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::getDefaultConnection();
+        }
+        
+        /**
+         * Set the default connection name.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function setDefaultConnection($name)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            \Vinkla\Hashids\HashidsManager::setDefaultConnection($name);
+        }
+        
+        /**
+         * Register an extension connection resolver.
+         *
+         * @param string $name
+         * @param callable $resolver
+         * @return void 
+         * @static 
+         */
+        public static function extend($name, $resolver)
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            \Vinkla\Hashids\HashidsManager::extend($name, $resolver);
+        }
+        
+        /**
+         * Return all of the created connections.
+         *
+         * @return object[] 
+         * @static 
+         */
+        public static function getConnections()
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::getConnections();
+        }
+        
+        /**
+         * Get the config instance.
+         *
+         * @return \Illuminate\Contracts\Config\Repository 
+         * @static 
+         */
+        public static function getConfig()
+        {
+            //Method inherited from \GrahamCampbell\Manager\AbstractManager            
+            return \Vinkla\Hashids\HashidsManager::getConfig();
+        }
+        
+    }         
+}
+    
     
 namespace {
 
@@ -14334,6 +14584,10 @@ namespace {
     class Form extends \Collective\Html\FormFacade {}
     
     class Html extends \Collective\Html\HtmlFacade {}
+    
+    class JHYoutube extends \App\Facades\JHYoutube {}
+    
+    class Hashids extends \Vinkla\Hashids\Facades\Hashids {}
     
 }
 

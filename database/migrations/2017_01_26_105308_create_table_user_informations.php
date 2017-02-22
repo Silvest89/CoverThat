@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAccountInformations extends Migration
+class CreateTableUserInformations extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -13,19 +14,17 @@ class CreateTableAccountInformations extends Migration
      */
     public function up()
     {
-        Schema::create('account_informations', function (Blueprint $table) {
+        Schema::create('user_informations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('account_id');
+            $table->unsignedInteger('user_id');
+            $table->string('nickname')->nullable();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('address')->nullable();
-            $table->string('house_number')->nullable();
-            $table->string('zip_code')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->timestamps();
 
-            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -36,7 +35,7 @@ class CreateTableAccountInformations extends Migration
      */
     public function down()
     {
-        Schema::drop('account_informations', function (Blueprint $table) {
+        Schema::drop('user_informations', function (Blueprint $table) {
             $table->dropForeign('account_id');
         });
     }

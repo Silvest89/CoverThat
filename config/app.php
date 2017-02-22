@@ -185,6 +185,9 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        //App\Providers\GoogleServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -238,6 +241,9 @@ return [
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'JHGoogle' => App\Facades\OAuth\JHGoogle::class,
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
 
     ],

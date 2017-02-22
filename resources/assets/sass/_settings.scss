@@ -420,8 +420,7 @@ $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-item-color-active: $white;
-//$menu-item-background-active: get-color(primary);
-$menu-item-background-active: #090909;
+$menu-item-background-active: get-color(purple);
 $menu-icon-spacing: 0.25rem;
 $menu-item-background-hover: $light-gray;
 $menu-border: $light-gray;
@@ -620,10 +619,9 @@ $tooltip-radius: $global-radius;
 // 37. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-//$topbar-background: $light-gray;
-$topbar-background: #222;
-//$topbar-submenu-background: $topbar-background;
+$topbar-padding: 0.25rem;
+$topbar-background: $light-gray;
+$topbar-submenu-background: $topbar-background;
 $topbar-submenu-background: $white;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

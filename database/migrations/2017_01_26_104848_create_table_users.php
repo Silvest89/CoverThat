@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAccounts extends Migration
+class CreateTableUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateTableAccounts extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->string('remember_token')->nullable();
-            $table->boolean('admin')->nullable();
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +30,6 @@ class CreateTableAccounts extends Migration
      */
     public function down()
     {
-        Schema::drop('accounts');
+        Schema::drop('users');
     }
 }

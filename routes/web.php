@@ -14,16 +14,23 @@
 Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => ['login.auth'], 'prefix' => 'dashboard', 'namespace' => 'Auth'], function () {
-    Route::get('/login', 'LoginController@index');
-    Route::post('/login', 'LoginController@login')->name('dashboard.login');
+
+    Route::get('/login', 'LoginController@index')->name('page.login');
+    Route::post('/login', 'LoginController@login')->name('form.login');
+    Route::post('/login/google', 'LoginController@googleSingleSignOn')->name('google.form.login');
+    Route::post('/login/facebook', 'LoginController@facebookSingleSignOn')->name('facebook.form.login');
+
 });
+
+Route::get('/oauth/google/sso', 'Auth\OAuthController@googleSingleSignOn');
+Route::get('/oauth/facebook/sso', 'Auth\OAuthController@facebookSingleSignOn');
 
 Route::post('/register', 'Auth\RegistrationController@register');
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'user.auth'], function() {
 
     Route::get('/logout', 'DashboardController@logout');
-    Route::get('/home', 'DashboardController@index')->name('dashboard_home');
+    Route::get('/home', 'DashboardController@index')->name('dashboard.home');
 
 });
 

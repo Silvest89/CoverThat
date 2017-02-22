@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class Account extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
 
@@ -18,7 +18,9 @@ class Account extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email'
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -30,11 +32,7 @@ class Account extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function isAdmin() {
-        return $this->admin;
-    }
-
     public function getInformation() {
-        return $this->hasOne('App\AccountInformation');
+        return $this->hasOne('App\Models\Account\UserInformation');
     }
 }

@@ -18,7 +18,7 @@ class LoginAuthenthication
     {
 
         if (Auth::check()) {
-            return redirect()->intended(route('dashboard_home'));
+            return redirect()->route('dashboard.home');
         }
 
         return $next($request);

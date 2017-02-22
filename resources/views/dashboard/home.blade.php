@@ -3,5 +3,7 @@
 @extends('dashboard.layouts.menu')
 
 @section('content')
-
+<script>
+    window.location.hash = '';
+</script>
 @endsection
