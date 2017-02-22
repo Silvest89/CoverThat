@@ -65,7 +65,7 @@ class JHGoogle extends Facade implements OAuthInterface
             'email',
         ]);
 
-        $this->client->setRedirectUri('http://' . \Request::getHost() . '/oauth/google/sso');
+        $this->client->setRedirectUri('https://' . \Request::getHost() . '/oauth/google/sso');
     }
 
     private function setYoutubeScopes()
@@ -78,7 +78,7 @@ class JHGoogle extends Facade implements OAuthInterface
         ]);
 
         $this->client->setAccessType("offline");
-        $this->client->setRedirectUri('http://' . \Request::getHost() . '/oauth/google/callback');
+        $this->client->setRedirectUri('https://' . \Request::getHost() . '/oauth/google/callback');
     }
 
     public function createAuthUrl($scope = null) : ?string
