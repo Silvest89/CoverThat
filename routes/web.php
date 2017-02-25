@@ -13,10 +13,10 @@
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => ['login.auth'], 'prefix' => 'dashboard', 'namespace' => 'Auth'], function () {
+Route::group(['middleware' => ['login.auth'], 'prefix' => 'dashboard', 'namespace' => 'Dashboard'], function () {
 
-    Route::get('/login', 'LoginController@index')->name('page.login');
-    Route::post('/login', 'LoginController@login')->name('form.login');
+    Route::get('/login', 'LoginController@index')->name('dashboard.login');
+    Route::post('/login', 'LoginController@login')->name('dashboard.login');
     Route::post('/login/google', 'LoginController@googleSingleSignOn')->name('google.form.login');
     Route::post('/login/facebook', 'LoginController@facebookSingleSignOn')->name('facebook.form.login');
 
@@ -29,7 +29,7 @@ Route::post('/register', 'Auth\RegistrationController@register');
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'user.auth'], function() {
 
-    Route::get('/logout', 'DashboardController@logout');
-    Route::get('/home', 'DashboardController@index')->name('dashboard.home');
+    Route::get('/logout', 'PagesController@logout');
+    Route::get('/home', 'PagesController@index')->name('dashboard.home');
 
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Dashboard;
 use App\Facades\OAuth\JHFacebook;
 use App\Http\Controllers\Controller;
 

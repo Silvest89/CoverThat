@@ -4,7 +4,7 @@
     <div class="loginForm">
             <div class="row align-center">
                 <div class="column small-12 medium-4">
-                    {!!  Form::open(['route' => 'form.login']) !!}
+                    {!!  Form::open(['route' => 'dashboard.login']) !!}
 
                 @if(Session::has('flash_error'))
                         <div class="success callout" data-closable="hinge-out-from-bottom">
