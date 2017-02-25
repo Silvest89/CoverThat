@@ -33,4 +33,3 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
     Route::get('/home', 'DashboardController@index')->name('dashboard.home');
 
 });
-
