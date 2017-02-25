@@ -9,3 +9,4 @@ Homestead.yaml
 /public/js/*
 /public/css/*
 /public/fonts/*
+_ide_helper.php
