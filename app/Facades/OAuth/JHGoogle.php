@@ -65,7 +65,7 @@ class JHGoogle extends Facade implements OAuthInterface
             'email',
         ]);
 
-        $this->client->setRedirectUri('https://' . \Request::getHost() . '/oauth/google/sso');
+        $this->client->setRedirectUri('http://' . \Request::getHost() . '/oauth/google/sso');
     }
 
     private function setYoutubeScopes()
