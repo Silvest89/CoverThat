@@ -60,7 +60,7 @@ class JHFacebook extends Facade implements OAuthInterface
 
         $helper = $this->client->getRedirectLoginHelper();
         $permissions = ['email']; // optional
-        $this->loginUrl = $helper->getLoginUrl('http://' . \Request::getHost() . '/oauth/facebook/sso', $permissions);
+        $this->loginUrl = $helper->getLoginUrl(route('google.sso'), $permissions);
     }
 
     public function createAuthUrl($scope = null) : ?string

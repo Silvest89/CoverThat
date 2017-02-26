@@ -22,8 +22,8 @@ Route::group(['middleware' => ['login.auth'], 'prefix' => 'dashboard', 'namespac
 
 });
 
-Route::get('/oauth/google/sso', 'Auth\OAuthController@googleSingleSignOn');
-Route::get('/oauth/facebook/sso', 'Auth\OAuthController@facebookSingleSignOn');
+Route::get('/oauth/google/sso', 'Auth\OAuthController@googleSingleSignOn')->name('google.sso');
+Route::get('/oauth/facebook/sso', 'Auth\OAuthController@facebookSingleSignOn')->name('facebook.sso');
 
 Route::post('/register', 'Auth\RegistrationController@register');
 
