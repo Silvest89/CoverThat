@@ -34,6 +34,10 @@ class JHGoogle extends Facade implements OAuthInterface
         return 'JHGoogle';
     }
 
+    /**
+     * JHGoogle constructor.
+     * @param $scope
+     */
     public function __construct($scope)
     {
 
@@ -57,6 +61,9 @@ class JHGoogle extends Facade implements OAuthInterface
         }
     }
 
+    /**
+     * Set the single sign-on scopes with the callback url.
+     */
     public function setSingleSignOnScopes()
     {
 
@@ -68,6 +75,9 @@ class JHGoogle extends Facade implements OAuthInterface
         $this->client->setRedirectUri(route('google.sso'));
     }
 
+    /**
+     *Set the scopes required for youtube access.
+     */
     private function setYoutubeScopes()
     {
 
@@ -81,12 +91,20 @@ class JHGoogle extends Facade implements OAuthInterface
         $this->client->setRedirectUri(route('google.sso'));
     }
 
+    /**
+     * @param null $scope
+     * @return null|string
+     */
     public function createAuthUrl($scope = null) : ?string
     {
 
         return $this->client->createAuthUrl($scope);
     }
 
+    /**
+     * @param null $authCode
+     * @return array|null
+     */
     public function getAccessToken($authCode = null) : ?array
     {
 
@@ -96,18 +114,27 @@ class JHGoogle extends Facade implements OAuthInterface
         return $this->client->getAccessToken();
     }
 
+    /**
+     * @param string $token
+     */
     public function setAccessToken(string $token)
     {
 
         $this->client->setAccessToken($token);
     }
 
+    /**
+     * @return null|string
+     */
     public function getRefreshToken() : ?string
     {
 
         return $this->client->getRefreshToken();
     }
 
+    /**
+     * @return \Google_Service_People_Person
+     */
     public function getProfileInfo()
     {
 

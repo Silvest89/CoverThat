@@ -36,6 +36,10 @@ class JHFacebook extends Facade implements OAuthInterface
         return 'JHGoogle';
     }
 
+    /**
+     * JHFacebook constructor.
+     * @param $scope
+     */
     public function __construct($scope)
     {
 
@@ -55,6 +59,9 @@ class JHFacebook extends Facade implements OAuthInterface
         }
     }
 
+    /**
+     * Set the single sign-on scopes with the callback url.
+     */
     public function setSingleSignOnScopes()
     {
 
@@ -63,12 +70,19 @@ class JHFacebook extends Facade implements OAuthInterface
         $this->loginUrl = $helper->getLoginUrl(route('facebook.sso'), $permissions);
     }
 
+    /**
+     * @param null $scope
+     * @return null|string
+     */
     public function createAuthUrl($scope = null) : ?string
     {
 
         return $this->loginUrl;
     }
 
+    /*
+     * Returns the accesstoken
+     */
     public function getAccessToken($authCode = null)
     {
         $helper = $this->client->getRedirectLoginHelper();
@@ -77,17 +91,29 @@ class JHFacebook extends Facade implements OAuthInterface
         return $helper->getAccessToken();
     }
 
+    /**
+     * Set the accesstoken for consecutive requests.
+     * @param string $token
+     */
     public function setAccessToken(string $token)
     {
 
         $this->client->setDefaultAccessToken($token);
     }
 
+    /**
+     * Returns the refreshtoken.
+     * @return null|string
+     */
     public function getRefreshToken() : ?string
     {
         return '';
     }
 
+    /**
+     * Returns the user's profile info object.
+     * @return \Facebook\GraphNodes\GraphUser
+     */
     public function getProfileInfo()
     {
         $response = $this->client->get('/me?fields=id,first_name,last_name,email');

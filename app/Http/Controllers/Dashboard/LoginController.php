@@ -10,6 +10,7 @@ use App\Facades\OAuth\JHGoogle;
 
 class LoginController extends Controller
 {
+
     public function index() {
 
         return view('dashboard.login');
@@ -23,9 +24,7 @@ class LoginController extends Controller
             return redirect()->intended(route('dashboard_home'));
         }
 
-        \Session::flash('flash_error', 'Email and/or password is incorrect.');
-
-        return redirect()->back();
+        return redirect()->back()->withErrors(['flash_error' => 'Email and/or password is incorrect.']);
     }
 
     public function googleSingleSignOn()
