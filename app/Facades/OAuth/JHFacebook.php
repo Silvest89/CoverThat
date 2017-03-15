@@ -9,21 +9,16 @@
 namespace App\Facades\OAuth;
 
 use App\Facades\Contracts\OAuth\OAuthInterface;
-use Illuminate\Support\Facades\Facade;
 use Facebook\Facebook;
 
 /**
  * This is the Hashids facade class.
  *
  */
-class JHFacebook extends Facade implements OAuthInterface
+class JHFacebook extends BaseOAuth implements OAuthInterface
 {
 
     public const SCOPE_SSO = 1;
-
-    protected $client;
-
-    protected $loginUrl;
 
     /**
      * Get the registered name of the component.
@@ -51,7 +46,7 @@ class JHFacebook extends Facade implements OAuthInterface
 
         switch($scope) {
 
-            case JHGoogle::SCOPE_SSO: {
+            case JHFacebook::SCOPE_SSO: {
 
                 $this->setSingleSignOnScopes();
                 break;

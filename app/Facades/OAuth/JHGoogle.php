@@ -9,19 +9,16 @@
 namespace App\Facades\OAuth;
 
 use App\Facades\Contracts\OAuth\OAuthInterface;
-use Illuminate\Support\Facades\Facade;
 
 /**
  * This is the Hashids facade class.
  *
  */
-class JHGoogle extends Facade implements OAuthInterface
+class JHGoogle extends BaseOAuth implements OAuthInterface
 {
 
     public const SCOPE_SSO = 1;
     public const SCOPE_YOUTUBE = 2;
-
-    protected $client;
 
     /**
      * Get the registered name of the component.
